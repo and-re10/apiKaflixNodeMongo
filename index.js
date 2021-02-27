@@ -31,8 +31,8 @@ app.use(bodyParser.json());
 // app.use(express.json());
 
 // Routes
-// const movieRoute = require('./routes/movies');
-// app.use('/api/movies/', movieRoute);
+const movieRoute = require('./routes/movies');
+app.use('/api/movies/', movieRoute);
 
 app.get('/', (req, res) => {
     res.json({
@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
 // Port du Server
 app.listen(PORT, () => {
     try {
-        console.log("CONNECTED ON PORT 3010");
+        console.log("CONNECTED ON PORT " + PORT);
     } catch (error) {
         console.log(error);
     };
