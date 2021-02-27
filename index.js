@@ -32,6 +32,12 @@ app.use(bodyParser.json());
 const movieRoute = require('./routes/movies');
 app.use('/api/movies/', movieRoute);
 
+app.get('/', (req, res) => {
+    res.json({
+        msg: 'OK',
+    })
+})
+
 // Port du Server
 app.listen(3010, () => {
     try {
