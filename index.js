@@ -22,6 +22,8 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
+const PORT = process.env.PORT || 3010
+
 // Middlewares
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -39,7 +41,7 @@ app.get('/', (req, res) => {
 })
 
 // Port du Server
-app.listen(3010, () => {
+app.listen(PORT, () => {
     try {
         console.log("CONNECTED ON PORT 3010");
     } catch (error) {

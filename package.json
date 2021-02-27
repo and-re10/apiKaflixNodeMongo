@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "start": "nodemon index.js"
-  },
+    },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/and-re10/apiKaflixNodeMongo.git"
