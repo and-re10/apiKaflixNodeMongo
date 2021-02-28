@@ -1,4 +1,5 @@
 const express = require('express');
+const { findOne } = require('../models/Movie');
 const Router = express();
 const Movie = require('../models/Movie');
 
@@ -28,6 +29,17 @@ Router.post("/store", async (req, res) => {
         console.log(savedMovie);
     } catch (error) {
         console.error(error);
+    }
+})
+
+//Show One Movie
+Router.get('/showOne/:id', async (req, res) => {
+    try {
+        const movie = await Movie.findOne({ _id: req.params.id });
+        res.send(movie);
+        console.log(movie);
+    } catch (error) {
+        console.error(error)
     }
 })
 
