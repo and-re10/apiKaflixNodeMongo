@@ -35,23 +35,32 @@ app.use(bodyParser.json());
 const movieRoute = require('./routes/movies');
 app.use('/api/movies/', movieRoute);
 
-const Movie = require('./models/Movie')
-app.get('/all', async (req, res) => {
-    try {
-        const movies = await Movie.find();
-        res.send(movies);
-        console.log(movies);
-    } catch (error) {
-        console.error(error);
-    }
-    
-})
+const categorieRoute = require('./routes/categories');
+app.use('/api/categories/', categorieRoute);
 
-app.get('/', (req, res) => {
-    res.json({
-        msg: 'OK',
-    })
-})
+const groupeRoute = require('./routes/grupes');
+app.use('/api/groupes/', groupeRoute);
+
+const userRoute = require('./routes/users');
+app.use('/api/users/', userRoute);
+
+// const Movie = require('./models/Movie')
+// app.get('/all', async (req, res) => {
+//     try {
+//         const movies = await Movie.find();
+//         res.send(movies);
+//         console.log(movies);
+//     } catch (error) {
+//         console.error(error);
+//     }
+    
+// })
+
+// app.get('/', (req, res) => {
+//     res.json({
+//         msg: 'OK',
+//     })
+// })
 
 // Port du Server
 app.listen(PORT, () => {

@@ -43,4 +43,13 @@ Router.get('/showOne/:id', async (req, res) => {
     }
 })
 
+Router.delete('/delete/:id', async (req, res) => {
+    try {
+        const movie = await Movie.deleteOne({ _id: req.params.id });
+        res.send(movie);
+    } catch (error) {
+        console.error(error);
+    }
+})
+
 module.exports = Router;
